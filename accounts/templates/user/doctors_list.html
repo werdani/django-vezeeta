@@ -13,33 +13,33 @@
 
             <div class="job_lists">
                 <div class="row">
-                    {% for d in doctor %}
+                    {% for doc in doctor %}
 
                       
                     <div class="col-lg-10 col-md-10" style="height: 16rem;" >
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
                                 <div >
-                                    {% if doctor.profile.image %}
+                                    {% if doc.profile.image %}
                                     
-                                    <img  src="{{doctor.profile.image.url}}" alt="" width="100" height="100">
+                                    <img  src="{{doc.profile.image.url}}" alt="" width="100" height="100">
                                     {% else %}
                                     <img  src="{% static 'static_s/img/candiateds/2.png'%}" alt="" width="100" height="100">
 
                                     {% endif %} 
                                 </div>
                                 <div class="jobs_conetent">
-                                    <a href=""><h5>دكتور </h5></a>
-                                    <h6>subtitle</h6>
+                                    <a href=""><h5>دكتور {{doc.profile.name}} </h5></a>
+                                    <h6>{{doc.profile.subtitle}}</h6>
                                     
                                     <div class="links_locat">
                                         <div class="location">
-                                            <p> <i class="fas fa-briefcase-medical"></i> دكتور <span style="color: blue;">doctor</span> متخصص في <span style="color: blue;">Specialist_doctor</span></p>
-                                            <p> <i class="fa fa-map-marker"></i>address : address_detail</p>
-                                            <p> <i class="fa fa-map-marker"></i> الكشف : <span style="color: blue;">price</span> جنية</p>
-                                            <p> <i class="fa fa-clock-o"></i> مدة الانتظار : <span style="color: blue;">Waiting_time</span> ساعه</p>
-                                            <p> <i class="fa fa-clock-o"></i> عدد ساعات العمل : <span style="color: blue;">working_hours</span> ساعه</p>
-                                            <p> <i class="fa fa-clock-o"></i>سعر المكالمه العادية  :<span style="color: blue;"> number_phone </span>  </p>
+                                            <p> <i class="fas fa-briefcase-medical"></i> دكتور <span style="color: blue;">{{doc.profile.doctor}}</span> متخصص في <span style="color: blue;">{{doc.profile.specialist_doctor}}</span></p>
+                                            <p> <i class="fa fa-map-marker"></i> {{doc.profile.address}}:{{doc.profile.address_detail}}</p>
+                                            <p> <i class="fa fa-map-marker"></i> الكشف : <span style="color: blue;">{{doc.profile.price}}</span> جنية</p>
+                                            <p> <i class="fa fa-clock-o"></i> مدة الانتظار : <span style="color: blue;">{{doc.profile.wating_time}}</span> ساعه</p>
+                                            <p> <i class="fa fa-clock-o"></i> عدد ساعات العمل : <span style="color: blue;">{{doc.profile.working_hours}}</span> ساعه</p>
+                                            <p> <i class="fa fa-clock-o"></i>سعر المكالمه العادية  :<span style="color: blue;"> {{doc.profile.phone_number}} </span>  </p>
 
 
                                         </div>

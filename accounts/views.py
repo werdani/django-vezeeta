@@ -1,13 +1,13 @@
+from .models import Profile
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from .models import Profile
+
 
 
 # Create your views here.
 
 def doctors_list(request):
-    doctor =User.objects.all()
-
+    doctor = User.objects.all()
     return render(request,'user/doctors_list.html',{'doctor':doctor})
 
 def doctors_details(request , slug):
