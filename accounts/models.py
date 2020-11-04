@@ -10,9 +10,21 @@ from django.utils.text import slugify
 class Profile(models.Model):
     user = models.OneToOneField(User,verbose_name=_("user"), on_delete=models.CASCADE)
     name = models.CharField(_("الاسم :"), max_length=50)
+    subtitle = models.CharField(_("نبذه عنك :"), max_length=50)
+    address = models.CharField(_("المحافظه :"), max_length=50)
+    address_detail = models.CharField(_("العنوان بالتفصيل :"), max_length=150)
+    phone_number = models.CharField(_("الهاتف :"), max_length=50)
+    working_hours = models.CharField(_("عدد ساعات العمل :"), max_length=50)
+    wating_time = models.CharField(_("مده الانتظار :"), max_length=50,blank=True, null=True)
+    doctor = models.CharField(_("دكتور ؟"), max_length=50,blank=True, null=True)
     who_i = models.TextField(_("من انا :"))
     price = models.IntegerField(_("سعر الكشف :"),blank=True,null=True) 
+    facbook = models.CharField( max_length=50,blank=True,null=True)
+    twitter = models.CharField(max_length=50,blank=True,null=True)
+    google = models.CharField(max_length=50,blank=True,null=True)
+
     image = models.ImageField(_("الصوره الشخصيه :"), upload_to='profile',blank=True, null=True)
+    specialist_doctor = models.CharField(_("متخصص في :"), max_length=50,blank=True, null=True)
     slug = models.SlugField(_("slug"),blank=True, null=True)
 
     def save(self, *args, **kwargs):
