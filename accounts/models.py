@@ -9,6 +9,8 @@ class Profile(models.Model):
     name = models.CharField(_("الاسم :"), max_length=50)
     who_i = models.TextField(_("من انا :"))
     price = models.IntegerField(_("سعر الكشف :")) 
+    image = models.ImageField(_("الصوره الشخصيه :"), upload_to='profile')
+    
 
     
     
