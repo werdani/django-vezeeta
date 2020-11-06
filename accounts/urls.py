@@ -7,6 +7,7 @@ urlpatterns = [
     path('doctors/',views.doctors_list,name='doctors_list'),
     path('login/',views.user_login,name='login'),
     path('signup/',views.user_signup,name='signup'),
+    path('profile/',views.myprofile,name='profile'),
     path('<slug:slug>/',views.doctors_details,name='doctors_details'),
 
 
