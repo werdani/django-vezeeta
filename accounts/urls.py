@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/',views.user_login,name='login'),
     path('signup/',views.user_signup,name='signup'),
     path('profile/',views.myprofile,name='profile'),
+    path('update/',views.update_profile,name='update_profile'),
     path('<slug:slug>/',views.doctors_details,name='doctors_details'),
 
 
