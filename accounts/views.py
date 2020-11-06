@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from .forms import Login_Form ,SignupForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -46,6 +47,7 @@ def user_login(request):
        
     return render(request,'user/login.html',{'form':form})
 
+@login_required()
 def myprofile(request):
 
     return render(request,'user/myprofile.html',{})
